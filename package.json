@@ -72,10 +72,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NedFlanders/dsh-question-note.git"
+    "url": "git+https://github.com/buaaflyaway/dsh-question-note.git"
   },
   "bugs": {
-    "url": "https://github.com/NedFlanders/dsh-question-note/issues"
+    "url": "https://github.com/buaaflyaway/dsh-question-note/issues"
   },
-  "homepage": "https://github.com/NedFlanders/dsh-question-note#readme"
+  "homepage": "https://github.com/buaaflyaway/dsh-question-note#readme"
 }
