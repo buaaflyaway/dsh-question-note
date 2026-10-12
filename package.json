@@ -1,0 +1,81 @@
+{
+  "name": "dsh-question-note",
+  "version": "0.3.0",
+  "description": "DSH ask_user_question enhancement: selecting an option reveals an optional note input right under it; the note is sent to the model alongside the selection.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/client.js.map",
+    "cordis.patch.yml",
+    "icon.svg",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node -e \"require('node:fs').rmSync('lib',{recursive:true,force:true})\" && tsdown",
+    "check": "node --check lib/index.js && node --check lib/client.js"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-primitives",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-store"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-client-locale": "^0.2.0-rc.1",
+    "@deepseek-ai/dsh-client-store": "^0.2.0-rc.1",
+    "@deepseek-ai/dsh-client-ui-conversation": "^0.2.0-rc.1",
+    "@deepseek-ai/dsh-client-ui-primitives": "^0.2.0-rc.1",
+    "@deepseek-ai/dsh-client-ui-slots": "^0.2.0-rc.1",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@types/react": "~18.3.1",
+    "clsx": "^2.1.1",
+    "lightningcss": "^1.32.0",
+    "react": "^18.2.0",
+    "tsdown": "^0.22.2",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "ask-user-question",
+    "interactive-question",
+    "supplement-note"
+  ],
+  "author": "NedFlanders",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NedFlanders/dsh-question-note.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NedFlanders/dsh-question-note/issues"
+  },
+  "homepage": "https://github.com/NedFlanders/dsh-question-note#readme"
+}

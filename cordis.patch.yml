@@ -1,0 +1,14 @@
+# dsh-question-note bundle patch
+#
+# Installed through the official CLI:
+#
+#   dsh plugin --profile desktop add dsh-question-note
+#
+# The command reconciles `dsh.profile.bundles` against installed packages and,
+# seeing this declaration, appends `dsh-question-note` to the bundle stack.
+# The profile boot merges THIS patch (a single `insert` of the plugin row); the
+# browser half is discovered automatically from the package's `dsh.client`
+# manifest and needs no separate row here.
+- insert:
+    - id: question-note
+      name: 'dsh-question-note'
